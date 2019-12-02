@@ -7,13 +7,13 @@ fn main() {
             tmp[1] = i;
             tmp[2] = j;
             while tmp[index] != 99 {
-                if tmp[index] == 1 {
-                    tmp[tmp[index + 3]] = tmp[tmp[index + 1]]  + tmp[tmp[index + 2]];
+                tmp[tmp[index + 3]] = if tmp[index] == 1 {
+                    tmp[tmp[index + 1]] + tmp[tmp[index + 2]]
                 } else if tmp[index] == 2 {
-                    tmp[tmp[index + 3]] = tmp[tmp[index + 1]]  * tmp[tmp[index + 2]];
+                    tmp[tmp[index + 1]] * tmp[tmp[index + 2]]
                 } else {
-                    println!("Error");
-                }
+                    0
+                };
                 index += 4;
             }
             if i==12 && j==2 {
