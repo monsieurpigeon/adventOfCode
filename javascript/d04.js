@@ -16,9 +16,7 @@ for (let index = input[0]; index < input[1] + 1; index++) {
                 doubles[digits[j]]++;
             }
         }
-        console.log(doubles, digits);
         if (doubles.includes(1)) {
-            console.log('++');
             response ++;
         }
     }

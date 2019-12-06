@@ -64,7 +64,7 @@ let response = collisions.reduce((memo, coll) => {
     return memo;
 }, 10000);
 
-console.log(response);
+console.log('response 1 :', response);
 
 let wire1Tic = 0;
 let wire2Tic = 0;
@@ -118,4 +118,4 @@ let response2 = collisions.reduce((memo, coll) => {
     return memo;
 }, 1000000);
 
-console.log(response2);
+console.log('response 2 :', response2);
