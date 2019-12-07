@@ -10,8 +10,9 @@ let intComputer = function (seq) {
         }
     };
 
-    this.compute = function (input) {
+    this.compute = function (input, isProd = true) {
         let inputIndex = 0;
+        let out;
         if (input === null) {
             return null;
         }
@@ -35,7 +36,11 @@ let intComputer = function (seq) {
                 // output
                 const output = this.getValue(this.index + 1, parameters[2]);
                 this.index += 2;
-                return [output];
+                if (isProd) {
+                    return [output];
+                } else {
+                    out = output;
+                }
             } else if (parameters[4] === 5){
                 if (this.getValue(this.index + 1, parameters[2]) !== 0) {
                     this.index = this.getValue(this.index + 2, parameters[1]);
@@ -66,7 +71,11 @@ let intComputer = function (seq) {
                 console.log('ERROR');
             }
         }
-        return null;
+        if (isProd) {
+            return null;
+        } else {
+            return out;
+        }
     }
 }
 
