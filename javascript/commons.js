@@ -1,4 +1,3 @@
-const TIMEOUT = 1000;
 let intComputer = function (seq) {
     this.sequence = seq.slice(0);
     this.index = 0;
@@ -13,14 +12,12 @@ let intComputer = function (seq) {
 
     this.compute = function (input) {
         let inputIndex = 0;
-        console.log('input', this.index, input);
         if (input === null) {
             return null;
         }
         while (this.sequence[this.index] !== 99) {
 
             const parameters = ("00000" + this.sequence[this.index]).slice(-5).split('').map((str) => {return +str});
-            // console.log(parameters);
             if (parameters[4] === 1) {
                 // addition
                 this.sequence[this.sequence[this.index + 3]] = this.getValue(this.index + 1, parameters[2]) + this.getValue(this.index + 2, parameters[1]);
@@ -38,7 +35,6 @@ let intComputer = function (seq) {
                 // output
                 const output = this.getValue(this.index + 1, parameters[2]);
                 this.index += 2;
-                console.log('output', this.index, [output]);
                 return [output];
             } else if (parameters[4] === 5){
                 if (this.getValue(this.index + 1, parameters[2]) !== 0) {
@@ -70,7 +66,6 @@ let intComputer = function (seq) {
                 console.log('ERROR');
             }
         }
-        console.log('HALT');
         return null;
     }
 }
