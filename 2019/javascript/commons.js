@@ -32,12 +32,16 @@ let intComputer = function (seq) {
         }
     }
 
+    this.inputIndex = 0;
+    this.input = [];
+
     this.compute = function (input, isProd = true) {
-        let inputIndex = 0;
         let out = [];
         if (input === null) {
+            console.log('null input')
             return null;
         }
+        this.input = [...this.input, ...input];
         while (this.sequence[this.index] !== 99) {
 
             const parameters = ("00000" + this.sequence[this.index]).slice(-5).split('').map((str) => {return +str});
@@ -54,8 +58,8 @@ let intComputer = function (seq) {
                 this.index += 4;
             } else if (parameters[4] === 3){
                 // input
-                this.setValue(this.index + 1, parameters[2], input[inputIndex]);
-                inputIndex++;
+                this.setValue(this.index + 1, parameters[2], this.input[this.inputIndex]);
+                this.inputIndex++;
                 this.index += 2;
             } else if (parameters[4] === 4){
                 // output
