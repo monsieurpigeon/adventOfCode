@@ -1,5 +1,5 @@
 let fs = require('fs');
-let text = fs.readFileSync('./inputs/d06.txt', 'utf-8');
+let text = fs.readFileSync('../inputs/d06.txt', 'utf-8');
 let instr = text.split('\n');
 let lights = [];
 let lights2 = [];

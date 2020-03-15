@@ -1,5 +1,5 @@
 let fs = require('fs');
-let text = fs.readFileSync('./inputs/d05.txt', 'utf-8');
+let text = fs.readFileSync('../inputs/d05.txt', 'utf-8');
 let total1 = 0;
 let total2 = 0;
 let naughty = ['ab', 'cd', 'pq', 'xy'];

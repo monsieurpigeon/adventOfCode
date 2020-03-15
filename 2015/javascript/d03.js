@@ -1,5 +1,5 @@
 let fs= require('fs');
-let text = fs.readFileSync('./inputs/d03.txt', 'utf-8');
+let text = fs.readFileSync('../inputs/d03.txt', 'utf-8');
 let houses = {};
 let houses2 = {};
 let total = 0;

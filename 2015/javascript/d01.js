@@ -1,5 +1,5 @@
 let fs = require("fs");
-let text = fs.readFileSync("./inputs/d01.txt", "utf-8");
+let text = fs.readFileSync("../inputs/d01.txt", "utf-8");
 let arr = text.split('');
 let firstTime = true;
 let floor = arr.reduce((memo, dir, index) => {

@@ -1,5 +1,5 @@
 let fs = require('fs');
-let text = fs.readFileSync('./inputs/d02.txt', 'utf-8');
+let text = fs.readFileSync('../inputs/d02.txt', 'utf-8');
 let arr = text.split('\n');
 let gifts = arr.map((line) => {
     return line.split('x');

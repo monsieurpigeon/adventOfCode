@@ -1,5 +1,5 @@
 let fs = require('fs');
-let text = fs.readFileSync('./inputs/d07.txt', 'utf-8');
+let text = fs.readFileSync('../inputs/d07.txt', 'utf-8');
 let orders = text.split('\n');
 let inst = orders.reduce((memo, order) => {
     let parts = order.split(' -> ');
