@@ -6,11 +6,11 @@ fn main() {
     let contents = fs::read_to_string("../inputs/d01.txt")
         .expect("Something went wrong reading the file");
     for (index, char) in contents.chars().enumerate() {
-        if char == '(' {
-            total = total + 1;
+        total = if char == '(' {
+            total + 1
         } else {
-            total = total - 1;
-        }
+            total - 1
+        };
         if total == -1 && first {
             first = false;
             print!("premiere fois au sous-sol\n{}\n", index + 1);
